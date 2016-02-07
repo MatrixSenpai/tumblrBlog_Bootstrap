@@ -1,0 +1,66 @@
+<!-- headers/navbar.html -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button><!-- /end navbar-toggle -->
+      <a href="/" class="navbar-brand"><img class="img-responsive av" src="{PortraitURL-24}" /></a>
+    </div><!-- /end navbar-header -->
+
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li class="archive">
+          <a href="{BlogURL}">
+            <span class="glyphicon glyphicon-cloud"></span>
+            Older Stuff
+          </a>
+        </li>
+
+        {block:AskEnabled}
+          <li class="ask">
+            <a href="/ask">
+              <span class="glyphicon glyphicon-envelope"></span>
+              {AskLabel}
+            </a>
+          </li>
+        {/block:AskEnabled}
+        {block:SubmissionsEnabled}
+          <li class="submit">
+            <a href="/submit">
+              <span class="glyphicon glyphicon-sunglasses"></span>
+              {SubmitLabel}
+            </a>
+          </li>
+        {/block:SubmissionsEnabled}
+
+        {block:HasPages}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Other Stuff
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              {block:Pages}
+                <li class="">
+                  <a href="{URL}">{Label}</a>
+                </li>
+              {/block:Pages}
+            </ul>
+          </li>
+        {/block:HasPages}
+
+        <form class="navbar-form navbar-right" action="/search" method="get">
+          <div class="form-group">
+              <input type="text" placeholder="Search" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+      </ul>
+    </div><!-- /end navbar-collapse -->
+  </div><!-- /end container:navbar-inverse -->
+</nav>
+<!-- /headers/navbar.html -->

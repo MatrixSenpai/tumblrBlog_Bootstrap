@@ -1,0 +1,16 @@
+{
+  "name": "tumblr_bootstrap_theme",
+  "version": "0.0.1",
+  "description": "Theme based on Bootstrap for Tumblr blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-contrib-concat": "0.5.1",
+    "grunt-contrib-copy": "0.8.2",
+    "grunt-processhtml": "^0.3.9"
+  }
+}

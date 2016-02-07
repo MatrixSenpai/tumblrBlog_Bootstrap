@@ -1,0 +1,42 @@
+<!-- panel-footer.html -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-8">
+      {block:RebloggedFrom}
+        <a href="{ReblogParentURL}" class="text-success">{ReblogParentName}</a>
+        <span class="glyphicon glyphicon-option-horizontal"></span>
+        <a href="{ReblogRootURL}" class="text-primary">{ReblogRootName}</a>
+      {/block:RebloggedFrom}
+      <a href="{Permalink}" class="text-danger">
+        <small>&#40;{NoteCount} Notes&#41;</small>
+      </a>
+    </div><!-- /sources -->
+
+    <div class="col-xs-4">
+      <div class="col-xs-2">
+        {LikeButton}
+      </div>
+      <div class="col-xs-2">
+        {ReblogButton}
+      </div>
+      <div class="col-xs-7 col-md-8 col-lg-8">
+        <button class="pull-right btn btn-info btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+          Share <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="{Permalink}"><span class="glyphicon glyphicon-check"></span> Permalink</a></li>
+          <li><a href="{EmbedURL}"><span class="glyphicon glyphicon-edit"></span> Embed</a></li>
+          <li><a id="save" href="{ShortURL}"><span class="glyphicon glyphicon-share"></span> Copy Short URL</a></li>
+        </ul>
+      </div>
+    </div><!-- /actions -->
+    {block:HasTags}
+      <div class="col-xs-12">
+        {block:Tags}
+          <a href="{TagURL}">{Tag}</a>
+        {/block:Tags}
+      </div>
+    {/block:HasTags}
+  </div><!-- /row -->
+</div><!-- /container-fluid -->
+<!-- /panel-footer.html -->

@@ -1,0 +1,64 @@
+<!-- headers/head.html -->
+<!-- Tumblr meta -->
+<meta name="text:Tagline" content="Is your forever all that I need?">
+<meta name="text: Network URLs (seperate with comma)" content="">
+
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}
+  <meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<!-- Bootstrap -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript">
+var sc_project=10725618;
+var sc_invisible=1;
+var sc_security="1e335086";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
+document.write("<script type='text/javascript' src='" + scJsHost+ "statcounter.com/counter/counter.js'></scr"+"ipt>");
+</script>-->
+
+<!-- Other Stuff -->
+<style type="text/css">
+  {CustomCSS}
+  body { padding-top: 70px; }
+
+  @media (max-width: 767px) {
+    .panel-footer {
+      min-height: 80px;
+    }
+  }
+  @media (min-width: 768px) {
+    .panel-footer {
+      min-height: 40px;
+    }
+  }
+</style>
+<script>
+  $(document).ready(function() {
+    if("{AvatarShape}" == "circle") {
+      $("img.av").addClass("img-circle")
+    } else {
+      $("img.av").addClass("img-rounded")
+    }
+
+    $(".navbar").affix({
+      top: 50,
+      bottom: function () {
+        return (this.bottom = $('.header').outerHeight(true))
+      }
+    });
+  });
+</script>
+<!-- /headers/head.html -->

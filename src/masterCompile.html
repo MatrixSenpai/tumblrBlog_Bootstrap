@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- build:include headers/head.html -->
+    <!-- /build -->
+  </head>
+  <body>
+    {block:IndexPage}
+      <!-- build:include headers/header.html -->
+      <!-- /build -->
+    {/block:IndexPage}
+    <!-- build:include headers/navbar.html -->
+    <!-- /build -->
+    <div class="container-fluid">
+      {block:IndexPage}
+        <div class="jumbotron">
+          <h1>{Title}<small>{Tagline}</small></h1>
+          <p>{Description}</p>
+        </div>
+      {/block:IndexPage}
+      <div class="col-md-4 hidden-sm hidden-xs">
+
+      </div>
+      <div class="col-md-8">
+        {block:Posts}
+          <div class="panel panel-default">
+            {block:Text}
+              <!-- build:include posts/post-text.html -->
+              <!-- /build -->
+            {/block:Text}
+            {block:Photo}
+              <!-- build:include posts/post-photo.html -->
+              <!-- /build -->
+            <div class="panel-footer">
+              <!-- build:include footers/panel-footer.html -->
+              <!-- /build -->
+            </div>
+          </div>
+        {/block:Posts}
+      </div>
+    </div>
+  </body>
+</html>
