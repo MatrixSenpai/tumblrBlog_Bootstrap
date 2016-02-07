@@ -1,15 +1,16 @@
-{block:Title}
-  <div class="panel-heading">
-    <h3 class="panel-title">
-      <a href="{Permalink}">{Title}</a>
-      {block:RebloggedFrom}
-        <small class="pull-right">
-          <a href="{ReblogRootURL}">{ReblogRootName}</a>
-        </small>
-      {/block:RebloggedFrom}
-    </h3>
+<!-- posts/post-text.html -->
+<div class="panel-heading">
+  {block:Title}
+    <div class="col-xs-9"> <!-- IMPORTANT. Notes will misalign otherwise -->
+      <h4 class="panel-title">{Title}</h4>
+    </div>
+  {/block:Title}
+  <div class="col-xs-2 pull-right">
+    <span class="pull-right text-info">
+      {NoteCountWithLabel}
+    </span>
   </div>
-{/block:Title}
+</div>
 <div class="panel-body">
   {Body}
-</div>
+<!-- /posts/post-text.html -->

@@ -2,42 +2,52 @@
 <html>
   <head>
     <!-- build:include headers/head.html -->
+      <!-- All the shit you gotta include to make it look right -->
     <!-- /build -->
   </head>
   <body>
-    {block:IndexPage}
-      <!-- build:include headers/header.html -->
-      <!-- /build -->
-    {/block:IndexPage}
-    <!-- build:include headers/navbar.html -->
+    <!-- build:include headers/header.html -->
+      <!-- This includes the header image and navigation bar -->
     <!-- /build -->
-    <div class="container-fluid">
+    <!-- MAIN -->
+    <div class="container scr col-xs-12">
+      <!-- Eventually, I'd like to make this smaller (optional) for an image left or right -->
       {block:IndexPage}
-        <div class="jumbotron">
-          <h1>{Title}<small>{Tagline}</small></h1>
-          <p>{Description}</p>
-        </div>
+      <!-- build:include headers/indexOnly.html -->
+        <!-- Index Page only content -->
+      <!-- /build -->
       {/block:IndexPage}
-      <div class="col-md-4 hidden-sm hidden-xs">
 
-      </div>
-      <div class="col-md-8">
-        {block:Posts}
+      <!-- CONTENT -->
+      {block:Posts}
+        <div class="col-xs-12">
           <div class="panel panel-default">
+            <!-- POST TYPES -->
+            <!-- 
+              Each type defines its own panel header and body.
+              Footer is static
+
+              NOTE !important
+              .panel-body MUST be missing the closing tag. It will be filled in at the footer
+            -->
             {block:Text}
-              <!-- build:include posts/post-text.html -->
-              <!-- /build -->
+            <!-- build:include posts/post-text.html -->
+              <!-- 
+                Text posts. Title (if exists) in header, nothing special for the body
+              -->
+            <!-- /build -->
             {/block:Text}
+
             {block:Photo}
-              <!-- build:include posts/post-photo.html -->
-              <!-- /build -->
-            <div class="panel-footer">
-              <!-- build:include footers/panel-footer.html -->
-              <!-- /build -->
-            </div>
+            <!-- build:include posts/post-photo.html -->
+              <!--
+                Photo posts. Nothing in header except notes.
+                .img-responsive applied via script to all <img> tags
+              -->
+            <!-- /build -->
+            {/block:Photo}
           </div>
-        {/block:Posts}
-      </div>
-    </div>
+        </div>
+      {/block:Posts}
   </body>
 </html>

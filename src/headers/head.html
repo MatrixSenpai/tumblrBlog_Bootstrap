@@ -1,64 +1,104 @@
 <!-- headers/head.html -->
-<!-- Tumblr meta -->
-<meta name="text:Tagline" content="Is your forever all that I need?">
-<meta name="text: Network URLs (seperate with comma)" content="">
-
-<link rel="shortcut icon" href="{Favicon}">
-<link rel="alternate" type="application/rss+xml" href="{RSS}">
-{block:Description}
-  <meta name="description" content="{MetaDescription}" />
-{/block:Description}
-
-<!-- Bootstrap -->
+<title>0x194 |{block:IndexPage} Tumblr{/block:IndexPage}{block:SearchPage} Search - {SearchQuery}{/block:SearchPage}{block:PostTitle} {PostTitle}{/block:PostTitle}</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap + dependancies -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-<!--<script type="text/javascript">
-var sc_project=10725618;
-var sc_invisible=1;
-var sc_security="1e335086";
-var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
-document.write("<script type='text/javascript' src='" + scJsHost+ "statcounter.com/counter/counter.js'></scr"+"ipt>");
-</script>-->
+<!-- Customization -->
+<meta name="text:Blogs" content="https://alucardxintegra.tumblr.com|Hellsing Fan Blog,https://inside-the-matrix.tumblr.com|Personal Blog" />
+<meta name="image:Background" content="" />
 
-<!-- Other Stuff -->
-<style type="text/css">
-  {CustomCSS}
-  body { padding-top: 70px; }
+<!-- SEO -->
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}
+    <meta name="description" content="{MetaDescription}" />
+{/block:Description}
 
-  @media (max-width: 767px) {
-    .panel-footer {
-      min-height: 80px;
+<!-- CSS -->
+<style>
+    {CustomCSS}
+
+    /* Heaader styles */
+    .header {
+        background-image: url({HeaderImage});
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+        padding-top: 30px;
     }
-  }
-  @media (min-width: 768px) {
-    .panel-footer {
-      min-height: 40px;
+
+    .ttl, .desc, .desc a {
+        color: #d81c35;
     }
-  }
+
+    .ttl {
+        text-align: right;
+        font-size: 20px;
+    }
+
+    .desc {
+        text-align: right;
+    }
+
+    .desc a {
+        text-decoration: underline;
+    }
+
+    /* Nav Styles */
+    .navbar {
+        border-radius: 0px;
+    }
+
+    /* Content Styles */
+    body {
+        {block:IfBackground}
+        background-image: url('{image:Background}');
+        background-repeat: none;
+        background-attachment: scroll;
+        {/block:IfBackground}
+        background-color: #333;
+    }
+
+    .panel-heading {
+        min-height: 40px;
+    }
 </style>
-<script>
-  $(document).ready(function() {
-    if("{AvatarShape}" == "circle") {
-      $("img.av").addClass("img-circle")
-    } else {
-      $("img.av").addClass("img-rounded")
-    }
 
-    $(".navbar").affix({
-      top: 50,
-      bottom: function () {
-        return (this.bottom = $('.header').outerHeight(true))
-      }
+<!-- Custom JavaScript -->
+<script>
+    $(document).ready(function() {
+        $(".srch").attr('placeholder', 'Find Something');
+
+        $(".snd").click(function() {
+            $('form.navbar-form').submit();
+        });
+
+        $("img").each(function() {
+            $(this).addClass("img-responsive")
+        })
+
+        {block:IfBlogs}
+
+        var blogs = "{text:Blogs}";
+
+        if(blogs.length > 1) {
+            var blogsAll = blogs.split(',');
+
+            $('.other').append('<li class="divider"></li>');
+
+            blogsAll.forEach(function(bl) {
+                var el = bl.split('|');
+                $('.other').append('<li><a href="' + el[0] + '">' + el[1] + '</a></li>');
+            });
+        }
+
+        {/block:IfBlogs}
     });
-  });
 </script>
 <!-- /headers/head.html -->

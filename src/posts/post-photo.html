@@ -1,14 +1,20 @@
+<!-- posts/post-photo.html -->
+<div class="panel-heading">
+  <div class="col-xs-2 pull-right">
+    <span class="pull-right text-info">
+      {NotesCountWithLabel}
+    </span>
+  </div>
+</div>
 <div class="panel-body">
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-8">
       {LinkOpenTag}
-        <img src="{PhotoURL-1280}" alt="{PhotoAlt}" class="img-responsive">
+        <img alt="{PhotoAlt}" src="{PhotoURL-500}" />
       {LinkCloseTag}
     </div>
-  {block:Caption}
-    <div class="col-xs-5 col-xs-offset-1 well well-sm">
+    <div class="col-xs-4 pull-right">
       {Caption}
     </div>
   </div>
-  {/block:Caption}
-</div>
+<!-- /posts/post-photo.html -->

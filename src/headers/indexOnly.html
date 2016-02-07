@@ -1,0 +1,31 @@
+<!-- headers/indexOnly.html -->
+<div class="col-md-12 hidden-sm hidden-xs">
+    <div class="well well-small" style="min-height: 160px; background-color: #011627; border: none;">
+        <div class="col-xs-12 row">
+            <div class="col-xs-1">
+                <img src="{PortraitURL-64}" alt="Main Icon" class="img-responsive img-rounded" />
+            </div>
+            <div class="col-xs-2 ttl">
+                {Title} 
+            </div>
+            <div class="col-xs-4 pull-right desc">
+                {Description}
+            </div>
+        </div>
+        {block:Following}
+            <button class="btn-info btn hidden" data-toggle="collapse" href="#following">Following</button>
+            <div class="collapse" id="following">
+                <div class="well well-sm">
+                    {block:Followed}
+                        <div class="col-xs-2">
+                            <a href="{FollowedURL}" data-toggle="tooltip" data-placement="top" title="{FollowedName}">
+                                <img class="img-responsive img-rounded" src="{FollowedPortraitURL-16}" />
+                            </a>
+                        </div>
+                    {/block:Followed}
+                </div>
+            </div>
+        {/block:Following}
+    </div>
+</div>
+<!-- /headers/indexOnly.html -->
