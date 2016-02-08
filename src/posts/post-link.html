@@ -1,0 +1,22 @@
+<div class="panel-heading">
+  <div class="col-xs-9">
+    <h4 class="panel-title">{Name}</h4>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <span class="pull-right text-info">
+      {NoteCountWithLabel}
+    </span>
+  </div>
+</div>
+<div class="panel-body">
+  {block:Thumbnail}
+    <div class="col-xs-6">
+      <img class="img-responsive img-rounded" src="{Thumbnail}" />
+    </div>
+  {/block:Thumbnail}
+  <div class="col-xs-6">
+    {Description}
+  </div>
+  <div class="col-xs-12">
+    <a href="{URL}" class="text-primary text-center">{Name}</a>
+  </div>

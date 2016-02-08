@@ -1,18 +1,29 @@
-{block:Answer}
-  <div class="panel-heading">
-    <h3 class="panel-title">{Asker} asked</h3>
+<div class="panel-heading">
+  <div class="col-xs-9">
+      <h4 class="panel-title">
+          {Asker}
+      </h4>
   </div>
-  <div class="panel-body">
-    <div class="well well-sm col-xs-12">
-      {Question}
-    </div>
-    <div class="col-xs-12">
+  <div class="col-xs-2 pull-right">
+      <span class="pull-right text-info">
+          {NoteCountWithLabel}
+      </span>
+  </div>
+</div>
+<div class="panel-body">
+  <div class="well well-sm" style="min-height:150px;">
+      <div class="col-xs-4">
+          <img src="{AskerPortraitURL-128}" class="img-responsive img-rounded" />
+      </div>
+      <div class="col-xs-8">
+          {Question}
+      </div>
+  </div>
+  <div class="col-xs-12">
       <blockquote>
-        {Answer}
-        {block:Answerer}
-          <footer>{Answerer}</footer>
-        {/block:Answerer}
+          {Answer}
+          {block:Answerer}
+              <footer>{Answerer}</footer>
+          {/block:Answerer}
       </blockquote>
-    </div>
   </div>
-{/block:Answer}

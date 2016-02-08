@@ -46,8 +46,90 @@
               -->
             <!-- /build -->
             {/block:Photo}
+
+            {block:Photoset}
+            <!-- build:include posts/post-photoset.html -->
+              <!--
+                Photoset posts. Nothing in header except notes.
+                .img-responsive applied via script to all <img> tags
+                Carousel with unique identifiers to prevent activating other carousels
+                Identifier is based on unique post ID
+              -->
+            <!-- /build -->
+            {/block:Photoset}
+
+            {block:Panorama}
+            <!-- build:include posts/post-panorama.html -->
+              <!--
+                Panorama posts. Nothing in header except notes.
+                .img-responsive applied via script to all <img> tags
+              -->
+            <!-- /build -->
+            {/block:Panorama}
+
+            {block:Quote}
+            <!-- build:include posts/post-quote.html -->
+              <!--
+                Quote posts. Header contains notes. Body is in <blockquote> with source in <footer>
+              -->
+            <!-- /build -->
+            {/block:Quote}
+
+            {block:Link}
+            <!-- build:include posts/post-link.html -->
+              <!--
+                Link posts. Header contains post name and notes. Body contains thumbnail (if exists) and description/URL
+              -->
+            <!-- /build -->
+            {/block:Link}
+
+            {block:Chat}
+            <!-- build:include posts/post-chat.html -->
+              <!--
+                Chat posts. Header contains title, if available, and note count. Body contains chat lines
+              -->
+            <!-- /build -->
+            {/block:Chat}
+
+            {block:Audio}
+            <!-- build:include posts/post-audio.html -->
+              <!--
+                Audio posts. Header contains notes. Body contains player
+              -->
+            <!-- /build -->
+            {/block:Audio}
+
+            {block:Video}
+            <!-- build:include posts/post-video.html -->
+              <!--
+                Video posts. Header contains notes. Body contains player
+              -->
+            <!-- /build -->
+            {/block:Video}
+
+            {block:Answer}
+            <!-- build:include posts/post-answers.html -->
+              <!--
+                Answer posts. Header contains notes and asker name. Body contains question and asker icon, as well as answer
+              -->
+            <!-- /build -->
+            {/block:Answer}
+
+            <!-- FOOTER -->
+            <!-- build:include footers/panel-footer.html -->
+              <!--
+                Panel footer
+                Contains tags, posted date + time ago, like/reblog, source and reblogged from, like/reblog/permalink
+              -->
+            <!-- /build -->
           </div>
         </div>
       {/block:Posts}
+    </div>
+    <footer>
+      <!-- build:include footers/footer.html -->
+        <!-- Simple footer, includes copyright -->
+      <!-- /build -->
+    </footer>
   </body>
 </html>

@@ -1,0 +1,19 @@
+<div class="panel-heading">
+  {block:Title}
+    <div class="col-xs-9">
+      <h4 class="panel-title">{Title}</h4>
+    </div>
+  {/block:Title}
+  <div class="col-xs-2 pull-right">
+    <span class="pull-right text-info">
+      {NoteCountWithLabel}
+    </span>
+  </div>
+</div>
+<div class="panel-body">
+  {block:Lines}
+    <p>
+      {block:Label}{Label} {/block:Label}
+      <span class="text-muted">{Line}</span>
+    </p>
+  {/block:Lines}

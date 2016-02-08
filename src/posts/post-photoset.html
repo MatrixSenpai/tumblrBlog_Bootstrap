@@ -1,0 +1,49 @@
+ <div class="panel-heading">
+    <div class="col-xs-2 pull-right">
+        <span class="pull-right text-info">
+            {NoteCountWithLabel}
+        </span>
+    </div>
+</div>
+<div class="panel-body">
+    <div class="col-xs-12">
+        <div id="carousel-photoset-{PostID}" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators ind-{PostID}">
+                <li data-target="#carousel-photoset-{PostID}" data-slide-to="0" class="active"></li>
+            </ol>
+
+            <!-- Slide wrapper -->
+            <div class="carousel-inner inner-{PostID}">
+                {block:Photos}
+                    <div class="item">
+                        <img src="{PhotoURL-500}" alt="{PhotoAlt}" style="width: 100%" />
+                    </div>
+                {/block:Photos}
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-photoset-{PostID}" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-photoset-{PostID}" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        {Caption}
+    </div>
+<script>
+    // Set up carousel stuff
+    
+    $(document).ready(function() {
+       // Generate indicators...
+       for(var i = 1; i < {PhotoCount}; i++) {
+            $('.ind-{PostID}').append('<li data-target="#carousel-photoset-{PostID}" data-slide-to="' + i + '"></li>');
+       }
+       // Set the first item in the carousel to active
+        $('.inner-{PostID}').children().first().addClass('active');
+    });
+</script>

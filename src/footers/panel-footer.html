@@ -1,42 +1,44 @@
-<!-- panel-footer.html -->
-<div class="container-fluid">
+  {block:HasTags}
+    <div class="col-xs-12">
+        {block:Tags}
+            <i><span class="text-muted">#<a class="text-muted" href="{TagURL}">{Tag}</a> </span></i>
+        {/block:Tags}
+    </div>
+  {/block:HasTags}
+</div>
+<!-- OFFICIAL END OF PANEL-BODY -->
+<div class="panel-footer">
   <div class="row">
     <div class="col-xs-8">
-      {block:RebloggedFrom}
-        <a href="{ReblogParentURL}" class="text-success">{ReblogParentName}</a>
-        <span class="glyphicon glyphicon-option-horizontal"></span>
-        <a href="{ReblogRootURL}" class="text-primary">{ReblogRootName}</a>
-      {/block:RebloggedFrom}
-      <a href="{Permalink}" class="text-danger">
-        <small>&#40;{NoteCount} Notes&#41;</small>
-      </a>
-    </div><!-- /sources -->
-
+      {block:Date}
+        Posted: {DayOfMonthWithZero}{ShortMonth}{ShortYear} at {24HourWithZero}{Minutes} &#40;{TimeAgo}&#41;
+      {/block:Date}
+    </div><!-- /source and date -->
     <div class="col-xs-4">
-      <div class="col-xs-2">
-        {LikeButton}
+      <div class="pull-right">
+        <div class="col-xs-2">{LikeButton color="black"}</div>
+        <div class="col-xs-2">{ReblogButton color="black"}</div>
       </div>
-      <div class="col-xs-2">
-        {ReblogButton}
-      </div>
-      <div class="col-xs-7 col-md-8 col-lg-8">
-        <button class="pull-right btn btn-info btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-          Share <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="{Permalink}"><span class="glyphicon glyphicon-check"></span> Permalink</a></li>
-          <li><a href="{EmbedURL}"><span class="glyphicon glyphicon-edit"></span> Embed</a></li>
-          <li><a id="save" href="{ShortURL}"><span class="glyphicon glyphicon-share"></span> Copy Short URL</a></li>
-        </ul>
-      </div>
-    </div><!-- /actions -->
-    {block:HasTags}
-      <div class="col-xs-12">
-        {block:Tags}
-          <a href="{TagURL}">{Tag}</a>
-        {/block:Tags}
-      </div>
-    {/block:HasTags}
+    </div><!-- /reblog and like -->
   </div><!-- /row -->
-</div><!-- /container-fluid -->
-<!-- /panel-footer.html -->
+  <div class="srcPost">
+    {block:RebloggedFrom}
+      <div class="row">
+        <div class="col-xs-12">
+          <span class="hidden-xs hidden-sm">Reblogged from:</span>
+          <a href="{ReblogParentURL}" class="text-success">
+            {ReblogParentName}
+          </a>
+          <span class="glyphicon glyphicon-option-horizontal visible-xs visible-sm"></span>
+          <span class="hidden-xs hidden-sm">Source:</span>
+          <a href="{ReblogRootURL}" class="text-primary">
+            {ReblogRootName}
+          </a>
+        </div>
+      </div><!-- /row -->
+    {/block:RebloggedFrom}
+    {block:NotReblog}
+      Source: <a href="{PostAuthorURL}">{PostAuthorName}</a>
+    {/block:NotReblog}
+  </div><!-- /srcPost -->
+</div>
