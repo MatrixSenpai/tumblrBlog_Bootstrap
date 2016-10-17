@@ -5,54 +5,5 @@
     </div>
 </div>
 
-<!-- Nav -->
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="{BlogURL}" class="navbar-brand">
-                <img alt="Blog Icon" src="{PortraitURL-24}" class="img-responsive img-rounded">
-            </a>
-            <p class="navbar-text">0x194</p>
-        </div><!-- /navbar-header -->
-        <div class="collapse navbar-collapse" id="main">
-            <ul class="nav navbar-nav">
-                {block:AskEnabled}
-                    <li class="ask">
-                        <a href="/ask">{AskLabel}</a>
-                    </li>
-                {/block:AskEnabled}
-                {block:SubmissionsEnabled}
-                    <li class="submit">
-                        <a href="/submit">{SubmitLabel}</a>
-                    </li>
-                {/block:SubmissionsEnabled}
-                {block:HasPages}
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Stuff<span class="caret"></span></a>
-                        <ul class="dropdown-menu other">
-                            {block:Pages}
-                                <li class="page_{Label}">
-                                    <a href="{URL}">{Label}</a>
-                                </li>
-                            {/block:Pages}
-                        </ul>
-                    </li>
-                {/block:HasPages}
-            </ul>
-            <form class="navbar-form navbar-right" role="search" action="/search" method="get">
-                <div class="input-group">
-                    <input type="text" class="form-control srch" value="{SearchQuery}" name="q">
-                    <span class="input-group-btn">
-                        <button class="btn btn-info snd" type="button"><span class="glyphicon glyphicon-search"></span> Find</button>
-                    </span>
-                </div>
-            </form>
-        </div><!-- /navbar-collapse #main -->
-    </div><!-- /container-fluid -->
-</nav>
+<!-- build:include navbar.html -->
+<!-- /build -->
